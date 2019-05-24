@@ -67,12 +67,12 @@ public final class PrefsUtils {
 
     public static boolean getJavascript(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getBoolean(KEY_JS, true);
+        return prefs.getBoolean(KEY_JS, false);
     }
 
     public static boolean getLocation(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        return prefs.getBoolean(KEY_LOCATION, true);
+        return prefs.getBoolean(KEY_LOCATION, false);
     }
 
     public static boolean getCookie(Context context) {
