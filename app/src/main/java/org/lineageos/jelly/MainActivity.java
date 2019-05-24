@@ -415,11 +415,13 @@ public class MainActivity extends WebViewExtActivity implements
                         startActivity(new Intent(this, SettingsActivity.class));
                         break;
                     case R.id.desktop_mode:
-                        mWebView.setDesktopMode(!isDesktop);
-                        desktopMode.setTitle(getString(isDesktop ?
-                                R.string.menu_desktop_mode : R.string.menu_mobile_mode));
-                        desktopMode.setIcon(ContextCompat.getDrawable(this, isDesktop ?
-                                R.drawable.ic_desktop : R.drawable.ic_mobile));
+                        try {
+                        // clearing app data
+                            Runtime runtime = Runtime.getRuntime();
+                            runtime.exec("pm clear org.lineageos.jelly");
+                                } catch (Exception e) {
+                            e.printStackTrace();
+								}
                         break;
                 }
                 return true;
