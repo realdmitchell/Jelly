@@ -73,7 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
             clearCookie.setOnPreferenceClickListener(preference -> {
                 CookieManager.getInstance().removeAllCookies(null);
                 Toast.makeText(getContext(), getString(R.string.pref_cookie_clear_done),
-                        Toast.LENGTH_LONG).show();
+                        Toast.LENGTH_SHORT).show();
                 return true;
             });
 

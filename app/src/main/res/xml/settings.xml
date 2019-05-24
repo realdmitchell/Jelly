@@ -58,13 +58,13 @@
             android:title="@string/pref_looklock_title" />
 
         <SwitchPreference
-            android:defaultValue="1"
+            android:defaultValue="0"
             android:key="key_javascript"
             android:summary="@string/pref_js_summary"
             android:title="@string/pref_js_title" />
 
         <SwitchPreference
-            android:defaultValue="1"
+            android:defaultValue="0"
             android:key="key_location"
             android:summary="@string/pref_location_summary"
             android:title="@string/pref_location_title" />
