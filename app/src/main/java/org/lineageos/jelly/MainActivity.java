@@ -46,6 +46,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -196,7 +197,20 @@ public class MainActivity extends WebViewExtActivity implements
             autoCompleteTextView.clearFocus();
             mWebView.loadUrl(url);
         });
-
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    // clearing app data
+                    Runtime runtime = Runtime.getRuntime();
+                    runtime.exec("pm clear org.lineageos.jelly");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //Snackbar.make(view, "All clear.", Snackbar.LENGTH_SHORT).show();
+            }
+        });
         Intent intent = getIntent();
         String url = intent.getDataString();
         mIncognito = intent.getBooleanExtra(IntentUtils.EXTRA_INCOGNITO, false);
