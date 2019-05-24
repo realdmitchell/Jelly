@@ -105,6 +105,7 @@ public class MainActivity extends WebViewExtActivity implements
     private static final String STATE_KEY_THEME_COLOR = "theme_color";
     private static final int STORAGE_PERM_REQ = 423;
     private static final int LOCATION_PERM_REQ = 424;
+    private boolean loadImages = false;
 
     private final BroadcastReceiver mUrlResolvedReceiver = new BroadcastReceiver() {
         @Override
@@ -386,7 +387,9 @@ public class MainActivity extends WebViewExtActivity implements
                         TabUtils.openInNewTab(this, null, true);
                         break;
                     case R.id.menu_reload:
-                        mWebView.reload();
+                        loadImages = !loadImages;
+                        mWebView.getSettings().setLoadsImagesAutomatically(loadImages);
+//                      mWebView.reload();
                         break;
                     case R.id.menu_add_favorite:
                         setAsFavorite(mWebView.getTitle(), mWebView.getUrl());
