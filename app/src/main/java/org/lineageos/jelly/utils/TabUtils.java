@@ -23,12 +23,12 @@ import org.lineageos.jelly.MainActivity;
 
 public final class TabUtils {
     public static void openInNewTab(Context context, String url, boolean incognito) {
-        Intent intent = new Intent(context, MainActivity.class);
         if (url != null && !url.isEmpty()) {
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent);
         }
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        intent.putExtra(IntentUtils.EXTRA_INCOGNITO, incognito);
-        context.startActivity(intent);
+
     }
 }

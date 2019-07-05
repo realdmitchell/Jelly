@@ -863,7 +863,7 @@ public class MainActivity extends WebViewExtActivity implements
             View view = parentView.get();
             if (view != null) {
                 Snackbar.make(view, view.getContext().getString(R.string.favorite_added),
-                        Snackbar.LENGTH_LONG).show();
+                        Snackbar.LENGTH_SHORT).show();
             }
         }
     }
