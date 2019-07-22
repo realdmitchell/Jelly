@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources>
-    <string name="app_name">AMP Browser</string>
+    <string name="app_name">Browser</string>
 
     <!-- Menu action: create new tab -->
     <string name="menu_new_tab">New tab</string>
@@ -164,7 +164,7 @@
     <string name="error_no_activity_found">No app can handle this link</string>
 
     <string translatable="false" name="default_search_engine">https://duckduckgo.com/?q={searchTerms}</string>
-    <string translatable="false" name="default_home_page">https://google.com</string>
+    <string translatable="false" name="default_home_page">https://duckduckgo.com/html</string>
     <string translatable="false" name="default_suggestion_provider">DUCK</string>
 
     <!-- Auth dialog: title -->

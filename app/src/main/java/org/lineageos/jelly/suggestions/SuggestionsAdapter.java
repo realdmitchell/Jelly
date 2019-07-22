@@ -136,8 +136,6 @@ public class SuggestionsAdapter extends BaseAdapter implements Filterable {
                     return new BingSuggestionProvider();
                 case DUCK:
                     return new DuckSuggestionProvider();
-                case GOOGLE:
-                    return new GoogleSuggestionProvider();
                 case YAHOO:
                     return new YahooSuggestionProvider();
             }
